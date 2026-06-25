@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>כרטיס BitMart — כרטיס Visa קריפטו | הוציאו USDT, ביטקוין ואיתריום בכל מקום</title>
-<meta name="description" content="כרטיס Visa קריפטו של BitMart — טענו USDT, ביטקוין ואיתריום ושלמו בהקשה בכל בית עסק בעולם. ללא דמי שנתי, הנפקה מיידית, Apple Pay ו-Google Pay. הזמינו עכשיו." />
+<meta name="description" content="כרטיס Visa קריפטו של BitMart — טענו USDT, ביטקוין ואיתריום ושלמו בהקשה בכל בית עסק בעולם. ללא דמי ניהול שנתיים, הנפקה מיידית, Apple Pay ו-Google Pay. הזמינו עכשיו." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -119,22 +119,12 @@
   /* card image (real BitMart silver card) */
   .hero-visual{position:relative;display:grid;place-items:center;min-height:430px}
   .glow{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.38),transparent 62%);filter:blur(16px)}
-  .card-img{
-    position:relative;z-index:2;width:392px;max-width:90%;height:auto;display:block;border-radius:16px;
-    transform:rotate(-6deg) translateZ(0);transition:transform .5s cubic-bezier(.2,.8,.2,1);cursor:pointer;
-    filter:drop-shadow(0 40px 70px rgba(0,0,0,.55));
-  }
-  .card-img:hover{transform:rotate(-2deg) scale(1.03)}
-  .float-pill{
-    position:absolute;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#fff;
-    background:rgba(17,33,31,.92);border:1px solid var(--line-strong);padding:9px 14px;border-radius:13px;
-    box-shadow:0 18px 40px -16px rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:3
-  }
-  .float-pill svg{flex:none}
-  .fp-apple{top:24px;inset-inline-start:-4px;animation:bob 5s ease-in-out infinite}
-  .fp-google{bottom:34px;inset-inline-end:-8px;animation:bob 5s ease-in-out infinite .8s}
-  .fp-cash{top:120px;inset-inline-end:-20px;animation:bob 6s ease-in-out infinite .4s}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .card-stack{position:relative;z-index:2;width:460px;max-width:96%;height:330px;display:grid;place-items:center;cursor:pointer}
+  .card-stack img{position:absolute;width:336px;height:auto;border-radius:15px;transition:transform .55s cubic-bezier(.2,.8,.2,1);will-change:transform}
+  .card-back{transform:rotate(-16deg) translate(44px,-22px);filter:drop-shadow(0 26px 48px rgba(0,0,0,.55));z-index:1}
+  .card-front{transform:rotate(-4deg) translate(-28px,28px);filter:drop-shadow(0 42px 70px rgba(0,0,0,.6));z-index:2}
+  .card-stack:hover .card-back{transform:rotate(-19deg) translate(60px,-30px)}
+  .card-stack:hover .card-front{transform:rotate(-2deg) translate(-36px,32px) scale(1.02)}
 
   /* ---------- trust strip ---------- */
   .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-top:26px;background:var(--bg-2)}
@@ -264,7 +254,8 @@
     .wrap{padding:0 18px}
     .stats-grid{grid-template-columns:1fr 1fr}
     .cta-card{padding:28px 20px}
-    .card-img{width:320px}
+    .card-stack{width:340px;height:260px}
+    .card-stack img{width:248px}
     .foot-grid{grid-template-columns:1fr}
     .legal{flex-direction:column}
   }
@@ -273,7 +264,7 @@
 <body>
 
 <!-- announcement -->
-<div class="topbar">🎉 הנפקה מיידית · <b>אפס דמי שנתי</b> · הירשמו עם אימייל בלבד והתחילו לשלם בקריפטו תוך דקות</div>
+<div class="topbar">🎉 הנפקה מיידית · <b>אפס דמי ניהול שנתיים</b> · הירשמו עם אימייל בלבד והתחילו לשלם בקריפטו תוך דקות</div>
 
 <!-- nav -->
 <header class="nav" id="nav">
@@ -302,7 +293,7 @@
       <h1>הוציאו את הקריפטו שלכם <span class="grad-text">בכל מקום בעולם</span></h1>
       <p class="lead">טענו USDT, ביטקוין ואיתריום לכרטיס BitMart ושלמו בהקשה אחת בכל בית עסק — אונליין, בחנות או מהטלפון. ההמרה אוטומטית, בלי למכור בבורסה.</p>
       <div class="micro">
-        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> ללא דמי שנתי</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> ללא דמי ניהול שנתיים</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> הנפקה מיידית</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> מוכן תוך 2 דקות</span>
       </div>
@@ -322,18 +313,9 @@
 
     <div class="hero-visual">
       <div class="glow"></div>
-      <img class="card-img" src="card-silver.png" alt="כרטיס BitMart Visa Platinum Business" />
-      <div class="float-pill fp-apple">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff"><path d="M17 12c0-2 1.6-3 1.7-3.1-.9-1.3-2.4-1.5-2.9-1.5-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 7.9.6.9 1.4 2 2.4 1.9.9 0 1.3-.6 2.4-.6s1.4.6 2.4.6 1.7-.9 2.3-1.8c.7-1 1-2 1-2-.1 0-1.9-.7-1.9-3.1zM15 5.8c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1z"/></svg>
-        Apple&nbsp;Pay
-      </div>
-      <div class="float-pill fp-google">
-        <svg width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#5fd0c2" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="#5fd0c2" stroke-width="2"/></svg>
-        Google&nbsp;Pay
-      </div>
-      <div class="float-pill fp-cash">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5fd0c2" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        תשלום מיידי
+      <div class="card-stack">
+        <img class="card-back" src="card-black.png" alt="כרטיס BitMart" />
+        <img class="card-front" src="card-silver.png" alt="כרטיס BitMart Visa Platinum Business" />
       </div>
     </div>
   </div>
@@ -412,7 +394,7 @@
       <p>נבנה למי שחי בקריפטו — שקוף, מהיר ומאובטח, בלי הפתעות בסוף החודש.</p>
     </div>
     <div class="ben-grid">
-      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>אפס דמי שנתי</h3><p>בלי דמי ניהול ובלי עלויות נסתרות. משלמים רק כשמשתמשים — וזהו.</p></div>
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>אפס דמי ניהול שנתיים</h3><p>בלי דמי ניהול ובלי עלויות נסתרות. משלמים רק כשמשתמשים — וזהו.</p></div>
       <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div><h3>הנפקה מיידית</h3><p>כרטיס וירטואלי מוכן תוך דקות, ישר לארנק שבטלפון. בלי המתנה לדואר.</p></div>
       <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></div><h3>קבלה גלובלית</h3><p>מתקבל בכל מקום שמקבל Visa — 180+ מדינות ומיליוני בתי עסק.</p></div>
       <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Apple&nbsp;Pay &amp; Google&nbsp;Pay</h3><p>מוסיפים לארנק הדיגיטלי ומשלמים בהקשה אחת, בלי להוציא כרטיס.</p></div>
@@ -428,7 +410,7 @@
     <div class="sec-head reveal">
       <div class="eyebrow">תוכניות</div>
       <h2>בחרו את הכרטיס שלכם</h2>
-      <p>0 דמי שנתי בכל הכרטיסים · עמלת עסקה אחידה של 1.3%. התחילו עם Virtual בחינם, או שדרגו לכרטיס פלסטיק או מתכת.</p>
+      <p>0 דמי ניהול שנתיים בכל הכרטיסים · עמלת עסקה אחידה של 1.3%. התחילו עם Virtual בחינם, או שדרגו לכרטיס פלסטיק או מתכת.</p>
     </div>
     <div class="price-grid">
       <div class="plan reveal">
@@ -437,7 +419,7 @@
         <div class="pp"><span class="amt num">חינם</span><span class="per">$0.00</span></div>
         <div class="pmonthly">מגבלה יומית $10,000</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי הנפקה ו-0 דמי שנתי</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי הנפקה ו-0 דמי ניהול שנתיים</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> עמלת עסקה 1.3%</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> הנפקה מיידית · Apple&nbsp;Pay &amp; Google&nbsp;Pay</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> ללא משיכת מזומן בכספומט</li>
@@ -452,7 +434,7 @@
         <div class="pp"><span class="amt num">$60</span><span class="per">חד-פעמי</span></div>
         <div class="pmonthly">מגבלה יומית $50,000</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי שנתי · עמלת עסקה 1.3%</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי ניהול שנתיים · עמלת עסקה 1.3%</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> כרטיס פיזי + משיכת מזומן בכספומט</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> עמלת משיכה בכספומט 2%</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> משלוח גלובלי עד הבית</li>
@@ -466,7 +448,7 @@
         <div class="pp"><span class="amt num">$110</span><span class="per">חד-פעמי</span></div>
         <div class="pmonthly">מגבלה יומית: ללא הגבלה</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי שנתי · עמלת עסקה 1.3%</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי ניהול שנתיים · עמלת עסקה 1.3%</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> עמלת משיכה בכספומט מ-1.5% (הנמוכה ביותר)</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> כרטיס מתכת VISA Platinum Business</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> מגבלות מקסימליות + תמיכת VIP</li>
@@ -529,7 +511,7 @@
     </div>
     <div class="faq-wrap">
       <div class="faq reveal"><q>כמה זמן לוקח לקבל את הכרטיס?</q><div class="a"><p>הכרטיס הוירטואלי מונפק תוך דקות ספורות מרגע אישור הטעינה ברשת הבלוקצ'יין. כרטיס פיזי נשלח אליכם תוך 7–14 ימי עסקים, לפי היעד.</p></div></div>
-      <div class="faq reveal"><q>מהן העמלות?</q><div class="a"><p>0 דמי שנתי בכל הכרטיסים, ועמלת עסקה אחידה של 1.3%. עלות ההנפקה: Virtual חינם, BitMart ‏$60, Platinum ‏$110. משיכת מזומן בכספומט: לא זמינה ב-Virtual, 2% ב-BitMart, ומ-1.5% ב-Platinum (העמלה הנמוכה ביותר).</p></div></div>
+      <div class="faq reveal"><q>מהן העמלות?</q><div class="a"><p>0 דמי ניהול שנתיים בכל הכרטיסים, ועמלת עסקה אחידה של 1.3%. עלות ההנפקה: Virtual חינם, BitMart ‏$60, Platinum ‏$110. משיכת מזומן בכספומט: לא זמינה ב-Virtual, 2% ב-BitMart, ומ-1.5% ב-Platinum (העמלה הנמוכה ביותר).</p></div></div>
       <div class="faq reveal"><q>אילו מטבעות אפשר לטעון?</q><div class="a"><p>אפשר לטעון USDT, ביטקוין, איתריום ועוד מגוון מטבעות, דרך הרשתות TRC20, ERC20, BEP20 ו-Solana. ההמרה למטבע ההוצאה מתבצעת אוטומטית.</p></div></div>
       <div class="faq reveal"><q>אפשר לחבר ל-Apple Pay או Google Pay?</q><div class="a"><p>בהחלט. גם הכרטיס הוירטואלי וגם הפיזי נתמכים ב-Apple Pay וב-Google Pay, כך שתוכלו לשלם בהקשה אחת מהטלפון או מהשעון.</p></div></div>
       <div class="faq reveal"><q>עד כמה הכרטיס מאובטח?</q><div class="a"><p>הכרטיס מוגן בהצפנה, אימות דו-שלבי (2FA) ויכולת הקפאה והפשרה מיידית מתוך האפליקציה. אתם בשליטה מלאה על הכרטיס בכל רגע.</p></div></div>
@@ -553,7 +535,7 @@
           <span><b>3</b> מקבלים את הכרטיס</span>
         </div>
         <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-primary btn-lg">נרשמים ומקבלים את הכרטיס →</a>
-        <div class="form-note">🔒 הנפקה מיידית · אפס דמי שנתי · ללא התחייבות</div>
+        <div class="form-note">🔒 הנפקה מיידית · אפס דמי ניהול שנתיים · ללא התחייבות</div>
       </div>
     </div>
   </div>
@@ -617,8 +599,7 @@
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';io.observe(el);});
 
   const CARD_URL='https://www.bitmart.com/activity/TheGoat';
-  const card=document.querySelector('.card-img');
-  if(card) card.addEventListener('click',()=>window.open(CARD_URL,'_blank','noopener'));
+  document.querySelectorAll('.card-stack img').forEach(c=>c.addEventListener('click',()=>window.open(CARD_URL,'_blank','noopener')));
 </script>
 </body>
 </html>
