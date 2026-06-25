@@ -109,6 +109,7 @@
   .hero p.lead{font-size:19px;color:var(--muted);max-width:540px;margin-bottom:14px}
   .hero .micro{font-size:14px;color:var(--muted-2);display:flex;gap:18px;flex-wrap:wrap;margin:26px 0 30px}
   .hero .micro span{display:inline-flex;align-items:center;gap:7px}
+  .hero .micro .hot{color:var(--teal-bright);font-weight:700}
   .hero .micro svg{flex:none}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
   .coin-pills{display:flex;gap:8px;align-items:center;margin-top:30px;flex-wrap:wrap}
@@ -163,6 +164,14 @@
   .flow-grid::before{content:"";position:absolute;top:30px;inset-inline:16%;height:2px;background:linear-gradient(90deg,transparent,var(--line-strong),transparent);z-index:1}
 
   /* ---------- benefits ---------- */
+  .cashback-banner{display:flex;align-items:center;gap:36px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(53,179,164,.2),var(--surface) 72%);border:1px solid var(--line-strong);border-radius:var(--radius);padding:30px 40px;margin-bottom:26px;box-shadow:0 26px 64px -34px rgba(47,165,149,.55);position:relative;overflow:hidden}
+  .cashback-banner::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.22),transparent 65%);inset-inline-start:-90px;top:-130px;pointer-events:none}
+  .cb-num{position:relative;z-index:1;text-align:center;line-height:1;flex:none}
+  .cb-num .kick{display:block;font-size:15px;font-weight:700;color:var(--teal-bright);margin-bottom:2px}
+  .cb-num .num{font-family:'Inter';font-weight:800;font-size:72px;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cb-text{position:relative;z-index:1;flex:1;min-width:240px}
+  .cb-text h3{font-size:24px;font-weight:800;color:#fff;margin-bottom:6px}
+  .cb-text p{color:var(--muted);font-size:16px;max-width:560px}
   .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .ben{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 24px;transition:transform .2s,background .2s}
   .ben:hover{transform:translateY(-4px);background:var(--surface-2)}
@@ -264,7 +273,7 @@
 <body>
 
 <!-- announcement -->
-<div class="topbar">🎉 הנפקה מיידית · <b>אפס דמי ניהול שנתיים</b> · הירשמו עם אימייל בלבד והתחילו לשלם בקריפטו תוך דקות</div>
+<div class="topbar">💰 <b>עד 10% כסף חזרה</b> · אפס דמי ניהול שנתיים · הנפקה מיידית — הירשמו עם אימייל בלבד והתחילו לשלם בקריפטו תוך דקות</div>
 
 <!-- nav -->
 <header class="nav" id="nav">
@@ -293,6 +302,7 @@
       <h1>הוציאו את הקריפטו שלכם <span class="grad-text">בכל מקום בעולם</span></h1>
       <p class="lead">טענו USDT, ביטקוין ואיתריום לכרטיס BitMart ושלמו בהקשה אחת בכל בית עסק — אונליין, בחנות או מהטלפון. ההמרה אוטומטית, בלי למכור בבורסה.</p>
       <div class="micro">
+        <span class="hot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5fd0c2" stroke-width="2.4"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> עד 10% כסף חזרה</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> ללא דמי ניהול שנתיים</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> הנפקה מיידית</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> מוכן תוך 2 דקות</span>
@@ -392,6 +402,13 @@
       <div class="eyebrow">היתרונות</div>
       <h2>כל מה שכרטיס קריפטו צריך להיות</h2>
       <p>נבנה למי שחי בקריפטו — שקוף, מהיר ומאובטח, בלי הפתעות בסוף החודש.</p>
+    </div>
+    <div class="cashback-banner reveal">
+      <div class="cb-num"><span class="kick">עד</span><span class="num">10%</span></div>
+      <div class="cb-text">
+        <h3>כסף חזרה על כל רכישה בכרטיס 💰</h3>
+        <p>קבלו cashback אוטומטי על כל תשלום שאתם מבצעים בכרטיס — ככל שמשלמים יותר, חוזר לכם יותר, ישירות לחשבון.</p>
+      </div>
     </div>
     <div class="ben-grid">
       <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>אפס דמי ניהול שנתיים</h3><p>בלי דמי ניהול ובלי עלויות נסתרות. משלמים רק כשמשתמשים — וזהו.</p></div>
