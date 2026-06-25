@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
-    /* BitMart authentic palette: teal-green · white · black */
+    /* BitMart palette: dark teal background · turquoise accent · real silver card */
     --bg:#0a1312;
     --bg-2:#0d1a18;
     --surface:#11211f;
@@ -30,7 +30,6 @@
     --radius:22px;
     --shadow:0 30px 80px -30px rgba(0,0,0,.8);
     --shadow-teal:0 22px 56px -18px rgba(47,165,149,.55);
-    --shadow-card:0 40px 90px -32px rgba(0,0,0,.85);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -55,10 +54,10 @@
   section{position:relative;z-index:1}
   .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  /* logo mark */
-  .bm-mark{height:32px;width:auto;display:block;flex:none}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px;letter-spacing:-.5px;color:#fff}
-  .brand small{font-weight:600;color:var(--muted);font-size:12px;border-inline-start:1px solid var(--line);padding-inline-start:11px;margin-inline-start:1px}
+  /* logo */
+  .logo-img{height:30px;width:auto;display:block;flex:none}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px;letter-spacing:-.5px;color:#fff}
+  .brand small{font-weight:600;color:var(--muted);font-size:12px;border-inline-start:1px solid var(--line);padding-inline-start:11px}
 
   /* ---------- announcement ---------- */
   .topbar{
@@ -117,53 +116,30 @@
   .coin{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:800;font-family:'Inter';border:1px solid var(--line);background:var(--surface)}
   .coin.usdt{color:#26a17b}.coin.btc{color:#f7931a}.coin.eth{color:#9aa6f0}.coin.sol{color:#46d6a8}
 
-  /* card mockup (silver Visa Platinum, like the real card) */
+  /* card image (real BitMart silver card) */
   .hero-visual{position:relative;display:grid;place-items:center;min-height:430px}
-  .glow{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.4),transparent 62%);filter:blur(14px)}
-  .ccard{
-    position:relative;width:362px;height:228px;border-radius:20px;padding:22px;
-    background:linear-gradient(140deg,#ffffff 0%,#eef3f4 46%,#dae3e4 100%);
-    border:1px solid rgba(255,255,255,.85);
-    box-shadow:var(--shadow-card), inset 0 1px 0 rgba(255,255,255,.95);
-    transform:rotate(-7deg) translateZ(0);
-    transition:transform .5s cubic-bezier(.2,.8,.2,1);
-    overflow:hidden;color:#0a1716;cursor:pointer;
+  .glow{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.38),transparent 62%);filter:blur(16px)}
+  .card-img{
+    position:relative;z-index:2;width:392px;max-width:90%;height:auto;display:block;border-radius:16px;
+    transform:rotate(-6deg) translateZ(0);transition:transform .5s cubic-bezier(.2,.8,.2,1);cursor:pointer;
+    filter:drop-shadow(0 40px 70px rgba(0,0,0,.55));
   }
-  .ccard:hover{transform:rotate(-3deg) scale(1.03)}
-  .ccard::after{content:"";position:absolute;inset:0;pointer-events:none;background:
-    radial-gradient(150px 150px at 86% 12%, rgba(53,179,164,.30), transparent 60%),
-    linear-gradient(58deg,transparent 42%, rgba(53,179,164,.12) 50%, transparent 58%);}
-  .c-accent{position:absolute;top:18px;inset-inline-end:20px;width:40px;height:30px;border-radius:8px;
-    background:linear-gradient(135deg,#54cabb,#1f877b);box-shadow:0 6px 14px -6px rgba(31,135,123,.7);z-index:2}
-  .c-bg-mark{position:absolute;top:50%;inset-inline-end:-22px;transform:translateY(-50%);height:168px;width:auto;opacity:.09;z-index:1}
-  .ccard .c-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
-  .ccard .c-brand{font-weight:900;font-size:18px;letter-spacing:-.4px;display:flex;align-items:center;gap:8px;color:#0a1716}
-  .ccard .c-brand svg{height:23px;width:auto}
-  .ccard .chip{width:44px;height:33px;border-radius:7px;margin-top:30px;position:relative;z-index:2;
-    background:linear-gradient(135deg,#e7cf95,#c4a35c);box-shadow:inset 0 0 0 1px rgba(120,90,30,.25)}
-  .ccard .c-num{font-family:'Inter';font-size:18.5px;letter-spacing:3px;color:#13211f;margin-top:16px;position:relative;z-index:2;font-weight:600}
-  .ccard .c-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px;position:relative;z-index:2}
-  .ccard .c-bottom small{display:block;font-size:9px;color:#5e7470;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
-  .ccard .c-name{font-family:'Inter';font-size:13px;color:#13211f;letter-spacing:1px;font-weight:600}
-  .ccard .visa{display:flex;align-items:baseline;gap:5px}
-  .ccard .visa i{font-family:'Inter';font-style:italic;font-weight:800;font-size:23px;color:#173a72;letter-spacing:-1px}
-  .ccard .visa b{font-weight:500;font-size:11px;color:#41524f;letter-spacing:.5px}
+  .card-img:hover{transform:rotate(-2deg) scale(1.03)}
   .float-pill{
     position:absolute;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#fff;
     background:rgba(17,33,31,.92);border:1px solid var(--line-strong);padding:9px 14px;border-radius:13px;
     box-shadow:0 18px 40px -16px rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:3
   }
   .float-pill svg{flex:none}
-  .fp-apple{top:30px;inset-inline-start:-6px;animation:bob 5s ease-in-out infinite}
-  .fp-google{bottom:42px;inset-inline-end:-10px;animation:bob 5s ease-in-out infinite .8s}
-  .fp-cash{top:120px;inset-inline-end:-22px;animation:bob 6s ease-in-out infinite .4s}
+  .fp-apple{top:24px;inset-inline-start:-4px;animation:bob 5s ease-in-out infinite}
+  .fp-google{bottom:34px;inset-inline-end:-8px;animation:bob 5s ease-in-out infinite .8s}
+  .fp-cash{top:120px;inset-inline-end:-20px;animation:bob 6s ease-in-out infinite .4s}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
   /* ---------- trust strip ---------- */
   .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-top:26px;background:var(--bg-2)}
   .trust-inner{display:flex;align-items:center;justify-content:center;gap:42px;flex-wrap:wrap;opacity:.9}
   .trust-inner span{font-family:'Inter';font-weight:800;font-size:17px;color:#bcd2cd;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
-  .trust-inner .star{color:var(--teal-bright)}
 
   /* ---------- stats ---------- */
   .stats{padding:54px 0}
@@ -188,7 +164,7 @@
   .persona h3{font-size:21px;font-weight:700;margin-bottom:10px;color:#fff}
   .persona p{color:var(--muted);font-size:15.5px}
 
-  /* ---------- how it works (flow) ---------- */
+  /* ---------- how it works ---------- */
   .flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
   .step{text-align:center;padding:0 24px;position:relative}
   .step .n{width:60px;height:60px;border-radius:50%;background:var(--surface);border:1px solid var(--line-strong);display:grid;place-items:center;margin:0 auto 20px;font-family:'Inter';font-weight:800;font-size:22px;color:var(--teal-bright);position:relative;z-index:2}
@@ -221,18 +197,14 @@
   .plan .btn{width:100%}
 
   /* ---------- social proof ---------- */
-  .tp-head{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:42px}
-  .tp-rating{display:flex;align-items:center;gap:12px;font-family:'Inter';font-weight:800;font-size:22px;color:#fff}
-  .tp-stars{color:var(--teal-bright);font-size:22px;letter-spacing:2px}
   .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .rev{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
-  .rev .rs{color:var(--teal-bright);font-size:15px;letter-spacing:2px;margin-bottom:12px}
+  .rev .rs{color:#f5b942;font-size:15px;letter-spacing:2px;margin-bottom:12px}
   .rev p{font-size:15px;color:#d6e6e2;margin-bottom:18px}
   .rev .who{display:flex;align-items:center;gap:11px}
   .rev .av{width:38px;height:38px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#04211d;font-weight:800;font-family:'Heebo';font-size:15px}
   .rev .who b{font-size:14.5px;display:block;color:#fff}
   .rev .who small{color:var(--muted-2);font-size:12.5px}
-  .rev .vf{margin-inline-start:auto;color:var(--teal-ink);font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px}
 
   /* ---------- faq ---------- */
   .faq-wrap{max-width:780px;margin:0 auto}
@@ -243,48 +215,23 @@
   .faq .a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15.5px}
   .faq .a p{padding:0 24px 22px}
 
-  /* ---------- final cta / form ---------- */
+  /* ---------- final cta ---------- */
   .cta-final{padding:84px 0}
   .cta-card{
     background:linear-gradient(150deg,rgba(53,179,164,.14),var(--surface) 58%);
     border:1px solid var(--line-strong);border-radius:32px;padding:54px;
-    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
     box-shadow:var(--shadow);position:relative;overflow:hidden
   }
   .cta-card::before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.24),transparent 64%);top:-170px;inset-inline-end:-130px;pointer-events:none}
-  .cta-left h2{font-size:38px}
-  .cta-left p{color:var(--muted);font-size:17px;margin-bottom:24px}
-  .cta-bullets{list-style:none;display:flex;flex-direction:column;gap:13px}
-  .cta-bullets li{display:flex;align-items:center;gap:11px;font-size:15.5px;color:#dcebe7}
-  .cta-bullets svg{flex:none}
-  .cta-center{grid-template-columns:1fr;text-align:center;padding:56px 40px}
+  .cta-center{text-align:center;padding:56px 40px}
   .cta-center .badge{margin-bottom:18px}
+  .cta-center h2{font-size:40px}
   .cta-center p{max-width:560px;margin:0 auto 26px;color:var(--muted);font-size:18px}
   .cta-flow{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-  .cta-flow span{display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15.5px;font-weight:600}
+  .cta-flow span{display:inline-flex;align-items:center;gap:8px;color:#dcebe7;font-size:15.5px;font-weight:600}
   .cta-flow b{width:28px;height:28px;border-radius:50%;background:var(--teal-soft);border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--teal-bright);font-family:'Inter';font-size:14px}
   .cta-flow .sep{color:var(--teal);font-weight:700;font-size:18px}
-
-  form{display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
-  .field label{display:block;font-size:13.5px;color:var(--muted);margin-bottom:7px;font-weight:500}
-  .field input,.field select{
-    width:100%;background:rgba(5,12,11,.6);border:1px solid var(--line-strong);border-radius:13px;
-    padding:14px 16px;color:#fff;font-family:'Heebo';font-size:15.5px;transition:border-color .2s,box-shadow .2s
-  }
-  .field input::placeholder{color:var(--muted-2)}
-  .field input:focus,.field select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(53,179,164,.18)}
-  .field select{appearance:none;color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%238ba4a0' stroke-width='2'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 16px center}
-  .field select option{color:#0a1312}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .check{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);line-height:1.5}
-  .check input{width:18px;height:18px;accent-color:var(--teal);margin-top:2px;flex:none}
-  .check a{color:var(--teal-ink);font-weight:600}
-  .form-note{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:2px}
-  .success{display:none;text-align:center;padding:28px;background:var(--teal-soft);border:1px solid var(--line-strong);border-radius:18px}
-  .success.show{display:block}
-  .success .ic{width:58px;height:58px;border-radius:50%;background:var(--grad);display:grid;place-items:center;margin:0 auto 14px;box-shadow:var(--shadow-teal)}
-  .success h3{font-size:22px;margin-bottom:6px;color:#fff}
-  .success p{color:var(--muted);font-size:15px}
+  .form-note{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:14px}
 
   /* ---------- footer ---------- */
   footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:20px;background:var(--bg-2)}
@@ -303,12 +250,12 @@
   /* ---------- responsive ---------- */
   @media(max-width:980px){
     .hero-grid{grid-template-columns:1fr;gap:36px}
-    .hero-visual{order:-1;min-height:340px}
+    .hero-visual{order:-1;min-height:330px}
     h1{font-size:42px}
     .stats-grid{grid-template-columns:repeat(2,1fr)}
     .persona-grid,.ben-grid,.price-grid,.rev-grid,.flow-grid{grid-template-columns:1fr}
     .flow-grid::before{display:none}
-    .cta-card{grid-template-columns:1fr;padding:36px 26px}
+    .cta-card{padding:36px 26px}
     .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
     .nav-links{display:none}
   }
@@ -316,23 +263,11 @@
     h1{font-size:34px}h2{font-size:30px}
     .wrap{padding:0 18px}
     .stats-grid{grid-template-columns:1fr 1fr}
-    .row2{grid-template-columns:1fr}
     .cta-card{padding:28px 20px}
-    .ccard{width:300px;height:190px}
+    .card-img{width:320px}
     .foot-grid{grid-template-columns:1fr}
     .legal{flex-direction:column}
   }
-  /* --- BitMart black card --- */
-  .ccard{background:linear-gradient(140deg,#2b3234 0%,#161d1e 46%,#080e0f 100%);border-color:rgba(255,255,255,.13);color:#eaf3f1}
-  .ccard .c-brand{color:#ffffff}
-  .ccard .c-brand svg path{stroke:#ffffff}
-  .ccard .c-num{color:#eaf3f1}
-  .ccard .c-name{color:#eaf3f1}
-  .ccard .c-bottom small{color:#93a7a3}
-  .ccard .visa i{color:#eef3f4}
-  .ccard .visa b{color:#a2b2af}
-  .c-bg-mark{opacity:.14}
-  .c-bg-mark path{stroke:#ffffff}
 </style>
 </head>
 <body>
@@ -344,20 +279,8 @@
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <div class="brand">
-      <svg class="bm-mark" viewBox="0 0 66 40" fill="none" aria-label="BitMart">
-        <g>
-          <rect x="2"  y="7"   width="13" height="3.4" rx="1.7" fill="#5fd0c2"/>
-          <rect x="7"  y="13"  width="9"  height="3.4" rx="1.7" fill="#2a9a8d"/>
-          <rect x="0"  y="19"  width="16" height="3.4" rx="1.7" fill="#35b3a4"/>
-          <rect x="6"  y="25"  width="10" height="3.4" rx="1.7" fill="#7fd8cd"/>
-          <rect x="3"  y="31"  width="8"  height="3.4" rx="1.7" fill="#2a9a8d"/>
-        </g>
-        <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38"
-              fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M29.4 7.4 H34.6 A5.1 5.1 0 0 1 34.6 17.6 H29.4 M29.4 24 H36 A5.1 5.1 0 0 1 36 34.2 H29.4 M29.4 7.4 V34.2"
-              fill="none" stroke="#35b3a4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      BitMart <small>Card</small>
+      <img class="logo-img" src="logo-white.png" alt="BitMart" />
+      <small>Card</small>
     </div>
     <nav class="nav-links">
       <a href="#benefits">יתרונות</a>
@@ -399,37 +322,7 @@
 
     <div class="hero-visual">
       <div class="glow"></div>
-      <div class="ccard">
-        <div class="c-accent"></div>
-        <svg class="c-bg-mark" viewBox="0 0 66 40" fill="none" aria-hidden="true">
-          <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38" fill="none" stroke="#0a1716" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="c-top">
-          <div class="c-brand">
-            <svg viewBox="0 0 66 40" fill="none" aria-hidden="true">
-              <g>
-                <rect x="2"  y="7"   width="13" height="3.4" rx="1.7" fill="#2fa595"/>
-                <rect x="7"  y="13"  width="9"  height="3.4" rx="1.7" fill="#1f877b"/>
-                <rect x="0"  y="19"  width="16" height="3.4" rx="1.7" fill="#35b3a4"/>
-                <rect x="6"  y="25"  width="10" height="3.4" rx="1.7" fill="#54cabb"/>
-                <rect x="3"  y="31"  width="8"  height="3.4" rx="1.7" fill="#1f877b"/>
-              </g>
-              <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38"
-                    fill="none" stroke="#0a1716" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            BitMart
-          </div>
-        </div>
-        <div class="chip"></div>
-        <div class="c-num">5421&nbsp;&nbsp;••••&nbsp;&nbsp;••••&nbsp;&nbsp;7390</div>
-        <div class="c-bottom">
-          <div>
-            <small>בעל הכרטיס</small>
-            <span class="c-name">CARD HOLDER</span>
-          </div>
-          <div class="visa"><i>VISA</i><b>Platinum Business</b></div>
-        </div>
-      </div>
+      <img class="card-img" src="card-silver.png" alt="כרטיס BitMart Visa Platinum Business" />
       <div class="float-pill fp-apple">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff"><path d="M17 12c0-2 1.6-3 1.7-3.1-.9-1.3-2.4-1.5-2.9-1.5-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 7.9.6.9 1.4 2 2.4 1.9.9 0 1.3-.6 2.4-.6s1.4.6 2.4.6 1.7-.9 2.3-1.8c.7-1 1-2 1-2-.1 0-1.9-.7-1.9-3.1zM15 5.8c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1z"/></svg>
         Apple&nbsp;Pay
@@ -672,18 +565,8 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="brand">
-          <svg class="bm-mark" viewBox="0 0 66 40" fill="none" aria-label="BitMart">
-            <g>
-              <rect x="2"  y="7"   width="13" height="3.4" rx="1.7" fill="#5fd0c2"/>
-              <rect x="7"  y="13"  width="9"  height="3.4" rx="1.7" fill="#2a9a8d"/>
-              <rect x="0"  y="19"  width="16" height="3.4" rx="1.7" fill="#35b3a4"/>
-              <rect x="6"  y="25"  width="10" height="3.4" rx="1.7" fill="#7fd8cd"/>
-              <rect x="3"  y="31"  width="8"  height="3.4" rx="1.7" fill="#2a9a8d"/>
-            </g>
-            <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38"
-                  fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          BitMart <small>Card</small>
+          <img class="logo-img" src="logo-white.png" alt="BitMart" />
+          <small>Card</small>
         </div>
         <p>כרטיס Visa קריפטו שמחבר בין הנכסים הדיגיטליים שלכם לעולם האמיתי. טענו, שלמו, חיו בקריפטו.</p>
       </div>
@@ -710,7 +593,7 @@
       </div>
     </div>
     <div class="legal">
-      <p>מסחר והחזקה במטבעות קריפטו כרוכים בסיכון ועלולים להוביל להפסד כספי. זמינות הכרטיס, ההטבות והעמלות עשויות להשתנות בהתאם לאזור ובכפוף לאישור ולבדיקות רגולטוריות. אין באמור בדף זה משום ייעוץ פיננסי, השקעתי או מס. BitMart היא סימן מסחרי של בעליו. * דף זה הוא דוגמת עיצוב — נתונים, מחירים וביקורות להמחשה בלבד ויש לעדכנם לפני פרסום.</p>
+      <p>מסחר והחזקה במטבעות קריפטו כרוכים בסיכון ועלולים להוביל להפסד כספי. זמינות הכרטיס, ההטבות והעמלות עשויות להשתנות בהתאם לאזור ובכפוף לאישור ולבדיקות רגולטוריות. אין באמור בדף זה משום ייעוץ פיננסי, השקעתי או מס. BitMart היא סימן מסחרי של בעליו.</p>
       <span class="cc">© 2026 BitMart Card</span>
     </div>
   </div>
@@ -734,19 +617,8 @@
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';io.observe(el);});
 
   const CARD_URL='https://www.bitmart.com/activity/TheGoat';
-  const card=document.querySelector('.ccard');
+  const card=document.querySelector('.card-img');
   if(card) card.addEventListener('click',()=>window.open(CARD_URL,'_blank','noopener'));
-
-  const form=document.getElementById('applyForm');
-  if(form){
-    form.addEventListener('submit',e=>{
-      e.preventDefault();
-      if(!form.checkValidity()){form.reportValidity();return;}
-      form.style.display='none';
-      document.getElementById('successBox').classList.add('show');
-      window.open(CARD_URL,'_blank','noopener');
-    });
-  }
 </script>
 </body>
 </html>
