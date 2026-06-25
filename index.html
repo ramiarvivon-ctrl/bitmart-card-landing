@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>כרטיס BitMart — כרטיס Visa קריפטו | הוציאו USDT, ביטקוין ואיתריום בכל מקום</title>
+<meta name="description" content="כרטיס Visa קריפטו של BitMart — טענו USDT, ביטקוין ואיתריום ושלמו בהקשה בכל בית עסק בעולם. ללא דמי שנתי, הנפקה מיידית, Apple Pay ו-Google Pay. הזמינו עכשיו." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* BitMart authentic palette: teal-green · white · black */
+    --bg:#0a1312;
+    --bg-2:#0d1a18;
+    --surface:#11211f;
+    --surface-2:#16302c;
+    --line:rgba(53,179,164,.15);
+    --line-strong:rgba(53,179,164,.32);
+    --teal:#35b3a4;
+    --teal-bright:#5fd0c2;
+    --teal-deep:#1f877b;
+    --teal-ink:#46bfb0;
+    --teal-soft:rgba(53,179,164,.10);
+    --text:#e9f4f1;
+    --muted:#8ba4a0;
+    --muted-2:#6c8884;
+    --grad:linear-gradient(135deg,#54cabb 0%,#2fa595 56%,#1f877b 100%);
+    --grad-text:linear-gradient(120deg,#74dccd 0%,#3bb6a7 55%,#229184 100%);
+    --radius:22px;
+    --shadow:0 30px 80px -30px rgba(0,0,0,.8);
+    --shadow-teal:0 22px 56px -18px rgba(47,165,149,.55);
+    --shadow-card:0 40px 90px -32px rgba(0,0,0,.85);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Heebo',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(620px 520px at 84% -6%, rgba(53,179,164,.22), transparent 60%),
+      radial-gradient(560px 480px at 4% 12%, rgba(31,135,123,.18), transparent 58%),
+      radial-gradient(820px 680px at 50% 122%, rgba(53,179,164,.10), transparent 60%);
+  }
+  .num{font-family:'Inter',sans-serif;font-feature-settings:"tnum";}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+  section{position:relative;z-index:1}
+  .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* logo mark */
+  .bm-mark{height:32px;width:auto;display:block;flex:none}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px;letter-spacing:-.5px;color:#fff}
+  .brand small{font-weight:600;color:var(--muted);font-size:12px;border-inline-start:1px solid var(--line);padding-inline-start:11px;margin-inline-start:1px}
+
+  /* ---------- announcement ---------- */
+  .topbar{
+    background:linear-gradient(90deg,rgba(53,179,164,.16),rgba(31,135,123,.06));
+    border-bottom:1px solid var(--line);
+    text-align:center;font-size:13.5px;color:#bdeae3;padding:9px 16px;font-weight:500;
+    position:relative;z-index:5;
+  }
+  .topbar b{color:#fff}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(10,19,18,.72);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s, background .3s;
+  }
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,19,18,.9)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:'Heebo';font-weight:700;font-size:15.5px;cursor:pointer;border:0;
+    padding:13px 24px;border-radius:13px;transition:transform .15s, box-shadow .25s, background .2s;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--grad);color:#04211d;box-shadow:var(--shadow-teal)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 28px 64px -16px rgba(47,165,149,.7)}
+  .btn-ghost{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--line-strong)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+  .btn-sm{padding:10px 18px;font-size:14.5px;border-radius:11px}
+  .btn-lg{padding:16px 30px;font-size:17px;border-radius:15px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 56px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--teal-soft);border:1px solid var(--line-strong);
+    color:#a7e7de;font-size:13.5px;font-weight:600;padding:7px 15px;border-radius:100px;margin-bottom:22px;
+  }
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(53,179,164,.22)}
+  h1{font-size:55px;line-height:1.08;font-weight:800;letter-spacing:-1.3px;margin-bottom:20px;color:#fff}
+  .hero p.lead{font-size:19px;color:var(--muted);max-width:540px;margin-bottom:14px}
+  .hero .micro{font-size:14px;color:var(--muted-2);display:flex;gap:18px;flex-wrap:wrap;margin:26px 0 30px}
+  .hero .micro span{display:inline-flex;align-items:center;gap:7px}
+  .hero .micro svg{flex:none}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .coin-pills{display:flex;gap:8px;align-items:center;margin-top:30px;flex-wrap:wrap}
+  .coin-pills .lbl{font-size:13px;color:var(--muted-2)}
+  .coin{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:800;font-family:'Inter';border:1px solid var(--line);background:var(--surface)}
+  .coin.usdt{color:#26a17b}.coin.btc{color:#f7931a}.coin.eth{color:#9aa6f0}.coin.sol{color:#46d6a8}
+
+  /* card mockup (silver Visa Platinum, like the real card) */
+  .hero-visual{position:relative;display:grid;place-items:center;min-height:430px}
+  .glow{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.4),transparent 62%);filter:blur(14px)}
+  .ccard{
+    position:relative;width:362px;height:228px;border-radius:20px;padding:22px;
+    background:linear-gradient(140deg,#ffffff 0%,#eef3f4 46%,#dae3e4 100%);
+    border:1px solid rgba(255,255,255,.85);
+    box-shadow:var(--shadow-card), inset 0 1px 0 rgba(255,255,255,.95);
+    transform:rotate(-7deg) translateZ(0);
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+    overflow:hidden;color:#0a1716;cursor:pointer;
+  }
+  .ccard:hover{transform:rotate(-3deg) scale(1.03)}
+  .ccard::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(150px 150px at 86% 12%, rgba(53,179,164,.30), transparent 60%),
+    linear-gradient(58deg,transparent 42%, rgba(53,179,164,.12) 50%, transparent 58%);}
+  .c-accent{position:absolute;top:18px;inset-inline-end:20px;width:40px;height:30px;border-radius:8px;
+    background:linear-gradient(135deg,#54cabb,#1f877b);box-shadow:0 6px 14px -6px rgba(31,135,123,.7);z-index:2}
+  .c-bg-mark{position:absolute;top:50%;inset-inline-end:-22px;transform:translateY(-50%);height:168px;width:auto;opacity:.09;z-index:1}
+  .ccard .c-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
+  .ccard .c-brand{font-weight:900;font-size:18px;letter-spacing:-.4px;display:flex;align-items:center;gap:8px;color:#0a1716}
+  .ccard .c-brand svg{height:23px;width:auto}
+  .ccard .chip{width:44px;height:33px;border-radius:7px;margin-top:30px;position:relative;z-index:2;
+    background:linear-gradient(135deg,#e7cf95,#c4a35c);box-shadow:inset 0 0 0 1px rgba(120,90,30,.25)}
+  .ccard .c-num{font-family:'Inter';font-size:18.5px;letter-spacing:3px;color:#13211f;margin-top:16px;position:relative;z-index:2;font-weight:600}
+  .ccard .c-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px;position:relative;z-index:2}
+  .ccard .c-bottom small{display:block;font-size:9px;color:#5e7470;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+  .ccard .c-name{font-family:'Inter';font-size:13px;color:#13211f;letter-spacing:1px;font-weight:600}
+  .ccard .visa{display:flex;align-items:baseline;gap:5px}
+  .ccard .visa i{font-family:'Inter';font-style:italic;font-weight:800;font-size:23px;color:#173a72;letter-spacing:-1px}
+  .ccard .visa b{font-weight:500;font-size:11px;color:#41524f;letter-spacing:.5px}
+  .float-pill{
+    position:absolute;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#fff;
+    background:rgba(17,33,31,.92);border:1px solid var(--line-strong);padding:9px 14px;border-radius:13px;
+    box-shadow:0 18px 40px -16px rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:3
+  }
+  .float-pill svg{flex:none}
+  .fp-apple{top:30px;inset-inline-start:-6px;animation:bob 5s ease-in-out infinite}
+  .fp-google{bottom:42px;inset-inline-end:-10px;animation:bob 5s ease-in-out infinite .8s}
+  .fp-cash{top:120px;inset-inline-end:-22px;animation:bob 6s ease-in-out infinite .4s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* ---------- trust strip ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-top:26px;background:var(--bg-2)}
+  .trust-inner{display:flex;align-items:center;justify-content:center;gap:42px;flex-wrap:wrap;opacity:.9}
+  .trust-inner span{font-family:'Inter';font-weight:800;font-size:17px;color:#bcd2cd;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+  .trust-inner .star{color:var(--teal-bright)}
+
+  /* ---------- stats ---------- */
+  .stats{padding:54px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 22px;text-align:center}
+  .stat .v{font-family:'Inter';font-size:34px;font-weight:800;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .stat .k{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+  /* ---------- section heading ---------- */
+  .sec{padding:74px 0}
+  .sec.alt{background:var(--bg-2);border-block:1px solid var(--line)}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 48px}
+  .eyebrow{color:var(--teal-ink);font-weight:700;font-size:14px;letter-spacing:.5px;margin-bottom:12px;text-transform:uppercase}
+  h2{font-size:40px;font-weight:800;letter-spacing:-.8px;line-height:1.15;margin-bottom:16px;color:#fff}
+  .sec-head p{color:var(--muted);font-size:17.5px}
+
+  /* personas */
+  .persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .persona{background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .25s,border-color .25s}
+  .persona:hover{transform:translateY(-6px);border-color:var(--line-strong)}
+  .persona .ic{width:54px;height:54px;border-radius:15px;background:var(--teal-soft);border:1px solid var(--line-strong);display:grid;place-items:center;margin-bottom:18px}
+  .persona h3{font-size:21px;font-weight:700;margin-bottom:10px;color:#fff}
+  .persona p{color:var(--muted);font-size:15.5px}
+
+  /* ---------- how it works (flow) ---------- */
+  .flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+  .step{text-align:center;padding:0 24px;position:relative}
+  .step .n{width:60px;height:60px;border-radius:50%;background:var(--surface);border:1px solid var(--line-strong);display:grid;place-items:center;margin:0 auto 20px;font-family:'Inter';font-weight:800;font-size:22px;color:var(--teal-bright);position:relative;z-index:2}
+  .step h3{font-size:20px;font-weight:700;margin-bottom:9px;color:#fff}
+  .step p{color:var(--muted);font-size:15px;max-width:280px;margin:0 auto}
+  .flow-grid::before{content:"";position:absolute;top:30px;inset-inline:16%;height:2px;background:linear-gradient(90deg,transparent,var(--line-strong),transparent);z-index:1}
+
+  /* ---------- benefits ---------- */
+  .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ben{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 24px;transition:transform .2s,background .2s}
+  .ben:hover{transform:translateY(-4px);background:var(--surface-2)}
+  .ben .ic{width:46px;height:46px;border-radius:12px;background:var(--teal-soft);display:grid;place-items:center;margin-bottom:16px}
+  .ben h3{font-size:18.5px;font-weight:700;margin-bottom:8px;color:#fff}
+  .ben p{color:var(--muted);font-size:14.8px}
+
+  /* ---------- pricing ---------- */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;position:relative;display:flex;flex-direction:column}
+  .plan.feat{border-color:var(--line-strong);background:linear-gradient(180deg,rgba(53,179,164,.08),var(--surface));box-shadow:0 0 0 1px rgba(53,179,164,.28),0 30px 70px -30px rgba(47,165,149,.4)}
+  .plan .tag{position:absolute;top:-13px;inset-inline-start:50%;transform:translateX(50%);background:var(--grad);color:#04211d;font-size:12.5px;font-weight:800;padding:5px 15px;border-radius:100px;box-shadow:var(--shadow-teal)}
+  .plan h3{font-size:21px;font-weight:700;margin-bottom:6px;color:#fff}
+  .plan .ptype{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .plan .pp{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+  .plan .pp .amt{font-family:'Inter';font-size:38px;font-weight:800;color:#fff}
+  .plan .pp .per{color:var(--muted);font-size:14px}
+  .plan .pmonthly{color:var(--teal-ink);font-size:13.5px;font-weight:700;margin-bottom:22px}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:26px;flex:1}
+  .plan li{display:flex;align-items:flex-start;gap:10px;font-size:14.8px;color:#cfe4df}
+  .plan li svg{flex:none;margin-top:3px}
+  .plan .btn{width:100%}
+
+  /* ---------- social proof ---------- */
+  .tp-head{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:42px}
+  .tp-rating{display:flex;align-items:center;gap:12px;font-family:'Inter';font-weight:800;font-size:22px;color:#fff}
+  .tp-stars{color:var(--teal-bright);font-size:22px;letter-spacing:2px}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .rev{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .rev .rs{color:var(--teal-bright);font-size:15px;letter-spacing:2px;margin-bottom:12px}
+  .rev p{font-size:15px;color:#d6e6e2;margin-bottom:18px}
+  .rev .who{display:flex;align-items:center;gap:11px}
+  .rev .av{width:38px;height:38px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#04211d;font-weight:800;font-family:'Heebo';font-size:15px}
+  .rev .who b{font-size:14.5px;display:block;color:#fff}
+  .rev .who small{color:var(--muted-2);font-size:12.5px}
+  .rev .vf{margin-inline-start:auto;color:var(--teal-ink);font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px}
+
+  /* ---------- faq ---------- */
+  .faq-wrap{max-width:780px;margin:0 auto}
+  .faq{border:1px solid var(--line);border-radius:15px;margin-bottom:12px;overflow:hidden;background:var(--surface);transition:border-color .2s}
+  .faq.open{border-color:var(--line-strong)}
+  .faq q{display:flex;align-items:center;justify-content:flex-start;gap:16px;padding:20px 24px;cursor:pointer;font-weight:600;font-size:17px;font-style:normal;color:#fff}
+  .faq q::before,.faq q::after{content:none}
+  .faq .a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15.5px}
+  .faq .a p{padding:0 24px 22px}
+
+  /* ---------- final cta / form ---------- */
+  .cta-final{padding:84px 0}
+  .cta-card{
+    background:linear-gradient(150deg,rgba(53,179,164,.14),var(--surface) 58%);
+    border:1px solid var(--line-strong);border-radius:32px;padding:54px;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+    box-shadow:var(--shadow);position:relative;overflow:hidden
+  }
+  .cta-card::before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(53,179,164,.24),transparent 64%);top:-170px;inset-inline-end:-130px;pointer-events:none}
+  .cta-left h2{font-size:38px}
+  .cta-left p{color:var(--muted);font-size:17px;margin-bottom:24px}
+  .cta-bullets{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .cta-bullets li{display:flex;align-items:center;gap:11px;font-size:15.5px;color:#dcebe7}
+  .cta-bullets svg{flex:none}
+  .cta-center{grid-template-columns:1fr;text-align:center;padding:56px 40px}
+  .cta-center .badge{margin-bottom:18px}
+  .cta-center p{max-width:560px;margin:0 auto 26px;color:var(--muted);font-size:18px}
+  .cta-flow{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+  .cta-flow span{display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15.5px;font-weight:600}
+  .cta-flow b{width:28px;height:28px;border-radius:50%;background:var(--teal-soft);border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--teal-bright);font-family:'Inter';font-size:14px}
+  .cta-flow .sep{color:var(--teal);font-weight:700;font-size:18px}
+
+  form{display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
+  .field label{display:block;font-size:13.5px;color:var(--muted);margin-bottom:7px;font-weight:500}
+  .field input,.field select{
+    width:100%;background:rgba(5,12,11,.6);border:1px solid var(--line-strong);border-radius:13px;
+    padding:14px 16px;color:#fff;font-family:'Heebo';font-size:15.5px;transition:border-color .2s,box-shadow .2s
+  }
+  .field input::placeholder{color:var(--muted-2)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(53,179,164,.18)}
+  .field select{appearance:none;color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%238ba4a0' stroke-width='2'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 16px center}
+  .field select option{color:#0a1312}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .check{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);line-height:1.5}
+  .check input{width:18px;height:18px;accent-color:var(--teal);margin-top:2px;flex:none}
+  .check a{color:var(--teal-ink);font-weight:600}
+  .form-note{font-size:12.5px;color:var(--muted-2);text-align:center;margin-top:2px}
+  .success{display:none;text-align:center;padding:28px;background:var(--teal-soft);border:1px solid var(--line-strong);border-radius:18px}
+  .success.show{display:block}
+  .success .ic{width:58px;height:58px;border-radius:50%;background:var(--grad);display:grid;place-items:center;margin:0 auto 14px;box-shadow:var(--shadow-teal)}
+  .success h3{font-size:22px;margin-bottom:6px;color:#fff}
+  .success p{color:var(--muted);font-size:15px}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:20px;background:var(--bg-2)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:42px}
+  .foot-brand p{color:var(--muted);font-size:14.5px;max-width:300px;margin-top:14px}
+  .foot-col h4{font-size:14px;font-weight:700;margin-bottom:16px;color:#fff}
+  .foot-col a{display:block;color:var(--muted);font-size:14.5px;margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--teal-ink)}
+  .legal{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .legal p{color:var(--muted-2);font-size:12.5px;max-width:760px;line-height:1.6}
+  .legal .cc{color:var(--muted-2);font-size:12.5px}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-visual{order:-1;min-height:340px}
+    h1{font-size:42px}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .persona-grid,.ben-grid,.price-grid,.rev-grid,.flow-grid{grid-template-columns:1fr}
+    .flow-grid::before{display:none}
+    .cta-card{grid-template-columns:1fr;padding:36px 26px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .nav-links{display:none}
+  }
+  @media(max-width:560px){
+    h1{font-size:34px}h2{font-size:30px}
+    .wrap{padding:0 18px}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .row2{grid-template-columns:1fr}
+    .cta-card{padding:28px 20px}
+    .ccard{width:300px;height:190px}
+    .foot-grid{grid-template-columns:1fr}
+    .legal{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- announcement -->
+<div class="topbar">🎉 הנפקה מיידית · <b>אפס דמי שנתי</b> · הירשמו עם אימייל בלבד והתחילו לשלם בקריפטו תוך דקות</div>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <svg class="bm-mark" viewBox="0 0 66 40" fill="none" aria-label="BitMart">
+        <g>
+          <rect x="2"  y="7"   width="13" height="3.4" rx="1.7" fill="#5fd0c2"/>
+          <rect x="7"  y="13"  width="9"  height="3.4" rx="1.7" fill="#2a9a8d"/>
+          <rect x="0"  y="19"  width="16" height="3.4" rx="1.7" fill="#35b3a4"/>
+          <rect x="6"  y="25"  width="10" height="3.4" rx="1.7" fill="#7fd8cd"/>
+          <rect x="3"  y="31"  width="8"  height="3.4" rx="1.7" fill="#2a9a8d"/>
+        </g>
+        <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38"
+              fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M29.4 7.4 H34.6 A5.1 5.1 0 0 1 34.6 17.6 H29.4 M29.4 24 H36 A5.1 5.1 0 0 1 36 34.2 H29.4 M29.4 7.4 V34.2"
+              fill="none" stroke="#35b3a4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      BitMart <small>Card</small>
+    </div>
+    <nav class="nav-links">
+      <a href="#benefits">יתרונות</a>
+      <a href="#how">איך זה עובד</a>
+      <a href="#pricing">תוכניות</a>
+      <a href="#faq">שאלות נפוצות</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-primary btn-sm">קבלו את הכרטיס</a>
+    </div>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span> כרטיס Visa קריפטו · Apple&nbsp;Pay ו-Google&nbsp;Pay</span>
+      <h1>הוציאו את הקריפטו שלכם <span class="grad-text">בכל מקום בעולם</span></h1>
+      <p class="lead">טענו USDT, ביטקוין ואיתריום לכרטיס BitMart ושלמו בהקשה אחת בכל בית עסק — אונליין, בחנות או מהטלפון. ההמרה אוטומטית, בלי למכור בבורסה.</p>
+      <div class="micro">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> ללא דמי שנתי</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> הנפקה מיידית</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> מוכן תוך 2 דקות</span>
+      </div>
+      <div class="hero-actions">
+        <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-primary btn-lg">קבלו את הכרטיס שלכם</a>
+        <a href="#benefits" class="btn btn-ghost btn-lg">גלו את ההטבות</a>
+      </div>
+      <div class="coin-pills">
+        <span class="lbl">טוענים עם:</span>
+        <span class="coin usdt">₮</span>
+        <span class="coin btc">₿</span>
+        <span class="coin eth">Ξ</span>
+        <span class="coin sol">◎</span>
+        <span class="lbl">· TRC20 · ERC20 · BEP20 · Solana</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="glow"></div>
+      <div class="ccard">
+        <div class="c-accent"></div>
+        <svg class="c-bg-mark" viewBox="0 0 66 40" fill="none" aria-hidden="true">
+          <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38" fill="none" stroke="#0a1716" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="c-top">
+          <div class="c-brand">
+            <svg viewBox="0 0 66 40" fill="none" aria-hidden="true">
+              <g>
+                <rect x="2"  y="7"   width="13" height="3.4" rx="1.7" fill="#2fa595"/>
+                <rect x="7"  y="13"  width="9"  height="3.4" rx="1.7" fill="#1f877b"/>
+                <rect x="0"  y="19"  width="16" height="3.4" rx="1.7" fill="#35b3a4"/>
+                <rect x="6"  y="25"  width="10" height="3.4" rx="1.7" fill="#54cabb"/>
+                <rect x="3"  y="31"  width="8"  height="3.4" rx="1.7" fill="#1f877b"/>
+              </g>
+              <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38"
+                    fill="none" stroke="#0a1716" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            BitMart
+          </div>
+        </div>
+        <div class="chip"></div>
+        <div class="c-num">5421&nbsp;&nbsp;••••&nbsp;&nbsp;••••&nbsp;&nbsp;7390</div>
+        <div class="c-bottom">
+          <div>
+            <small>בעל הכרטיס</small>
+            <span class="c-name">CARD HOLDER</span>
+          </div>
+          <div class="visa"><i>VISA</i><b>Platinum Business</b></div>
+        </div>
+      </div>
+      <div class="float-pill fp-apple">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff"><path d="M17 12c0-2 1.6-3 1.7-3.1-.9-1.3-2.4-1.5-2.9-1.5-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 7.9.6.9 1.4 2 2.4 1.9.9 0 1.3-.6 2.4-.6s1.4.6 2.4.6 1.7-.9 2.3-1.8c.7-1 1-2 1-2-.1 0-1.9-.7-1.9-3.1zM15 5.8c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1z"/></svg>
+        Apple&nbsp;Pay
+      </div>
+      <div class="float-pill fp-google">
+        <svg width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#5fd0c2" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="#5fd0c2" stroke-width="2"/></svg>
+        Google&nbsp;Pay
+      </div>
+      <div class="float-pill fp-cash">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5fd0c2" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        תשלום מיידי
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- trust strip -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <span>VISA</span>
+    <span>Apple&nbsp;Pay</span>
+    <span>Google&nbsp;Pay</span>
+    <span>🔒 מאובטח</span>
+  </div>
+</div>
+
+<!-- stats -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat reveal"><div class="v num">180+</div><div class="k">מדינות שמקבלות את הכרטיס</div></div>
+    <div class="stat reveal"><div class="v num">100+</div><div class="k">מטבעות קריפטו נתמכים</div></div>
+    <div class="stat reveal"><div class="v num">9M+</div><div class="k">משתמשים ב-BitMart בעולם</div></div>
+    <div class="stat reveal"><div class="v num">24/7</div><div class="k">תמיכה ומעבר אוטומטי</div></div>
+  </div>
+</section>
+
+<!-- personas -->
+<section class="sec" id="who">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">למי זה מתאים</div>
+      <h2>כרטיס אחד, לכל סגנון חיים</h2>
+      <p>בין אם אתם מטיילים, מנהלים עסק או מחזיקים קריפטו לטווח ארוך — הכרטיס הופך את המטבעות שלכם לכוח קנייה אמיתי.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+        <h3>נוודים דיגיטליים</h3>
+        <p>טיילו בראש שקט. טענו ב-USDT מכל מקום בעולם ושלמו מיד על טיסות, מלונות וקפה — בלי להמתין להעברות בנקאיות ובלי עמלות המרה מנופחות.</p>
+      </div>
+      <div class="persona reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+        <h3>בעלי עסקים ופרילנסרים</h3>
+        <p>הפרידו בקלות בין הוצאות העסק להוצאות האישיות, נהלו מנויים ותשלומים בינלאומיים, ומשכו רווחי קריפטו ישירות לכוח קנייה.</p>
+      </div>
+      <div class="persona reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.8"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 20l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <h3>מחזיקי קריפטו</h3>
+        <p>המירו את ה-USDT, BTC וה-ETH שלכם לכוח קנייה — בלי למכור בבורסה, בלי בירוקרטיה, ובלי לאבד שליטה על הנכסים שלכם.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- how it works -->
+<section class="sec alt" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">איך זה עובד</div>
+      <h2>מהקריפטו לתשלום — בשלושה צעדים</h2>
+      <p>בלי ניירת ובלי המתנה. ההגדרה כולה אונליין ולוקחת פחות משתי דקות.</p>
+    </div>
+    <div class="flow-grid">
+      <div class="step reveal"><div class="n num">1</div><h3>נרשמים</h3><p>פותחים חשבון עם אימייל בלבד. מקבלים כרטיס וירטואלי מיד, מוכן לשימוש.</p></div>
+      <div class="step reveal"><div class="n num">2</div><h3>טוענים</h3><p>מעבירים USDT, BTC או ETH לכרטיס דרך הרשת המועדפת. ההמרה למטבע מקומי אוטומטית.</p></div>
+      <div class="step reveal"><div class="n num">3</div><h3>משלמים</h3><p>משלמים אונליין, בחנות, או בהקשה אחת דרך Apple Pay ו-Google Pay — בכל מקום שמקבל Visa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- benefits -->
+<section class="sec" id="benefits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">היתרונות</div>
+      <h2>כל מה שכרטיס קריפטו צריך להיות</h2>
+      <p>נבנה למי שחי בקריפטו — שקוף, מהיר ומאובטח, בלי הפתעות בסוף החודש.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>אפס דמי שנתי</h3><p>בלי דמי ניהול ובלי עלויות נסתרות. משלמים רק כשמשתמשים — וזהו.</p></div>
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div><h3>הנפקה מיידית</h3><p>כרטיס וירטואלי מוכן תוך דקות, ישר לארנק שבטלפון. בלי המתנה לדואר.</p></div>
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></div><h3>קבלה גלובלית</h3><p>מתקבל בכל מקום שמקבל Visa — 180+ מדינות ומיליוני בתי עסק.</p></div>
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Apple&nbsp;Pay &amp; Google&nbsp;Pay</h3><p>מוסיפים לארנק הדיגיטלי ומשלמים בהקשה אחת, בלי להוציא כרטיס.</p></div>
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>אבטחה ברמת בנק</h3><p>הצפנה, אימות דו-שלבי (2FA) והקפאת כרטיס מיידית — הכול מהאפליקציה.</p></div>
+      <div class="ben reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="1.9"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 14h5"/></svg></div><h3>שליטה מהאפליקציה</h3><p>טעינה, מעקב הוצאות, התראות והגדרות — הכול ממסך אחד, בזמן אמת.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- pricing -->
+<section class="sec alt" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">תוכניות</div>
+      <h2>בחרו את הכרטיס שלכם</h2>
+      <p>0 דמי שנתי בכל הכרטיסים · עמלת עסקה אחידה של 1.3%. התחילו עם Virtual בחינם, או שדרגו לכרטיס פלסטיק או מתכת.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan reveal">
+        <h3>Virtual</h3>
+        <div class="ptype">כרטיס וירטואלי אונליין</div>
+        <div class="pp"><span class="amt num">חינם</span><span class="per">$0.00</span></div>
+        <div class="pmonthly">מגבלה יומית $10,000</div>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי הנפקה ו-0 דמי שנתי</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> עמלת עסקה 1.3%</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> הנפקה מיידית · Apple&nbsp;Pay &amp; Google&nbsp;Pay</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> ללא משיכת מזומן בכספומט</li>
+        </ul>
+        <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-ghost">קבלו Virtual בחינם</a>
+      </div>
+
+      <div class="plan feat reveal">
+        <div class="tag">הכי פופולרי</div>
+        <h3>BitMart</h3>
+        <div class="ptype">כרטיס פלסטיק פיזי</div>
+        <div class="pp"><span class="amt num">$60</span><span class="per">חד-פעמי</span></div>
+        <div class="pmonthly">מגבלה יומית $50,000</div>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי שנתי · עמלת עסקה 1.3%</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> כרטיס פיזי + משיכת מזומן בכספומט</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> עמלת משיכה בכספומט 2%</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> משלוח גלובלי עד הבית</li>
+        </ul>
+        <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-primary">הזמינו BitMart</a>
+      </div>
+
+      <div class="plan reveal">
+        <h3>Platinum</h3>
+        <div class="ptype">כרטיס מתכת (Metal) · פרימיום</div>
+        <div class="pp"><span class="amt num">$110</span><span class="per">חד-פעמי</span></div>
+        <div class="pmonthly">מגבלה יומית: ללא הגבלה</div>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 0 דמי שנתי · עמלת עסקה 1.3%</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> עמלת משיכה בכספומט מ-1.5% (הנמוכה ביותר)</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> כרטיס מתכת VISA Platinum Business</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#46bfb0" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> מגבלות מקסימליות + תמיכת VIP</li>
+        </ul>
+        <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-ghost">שדרגו ל-Platinum</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>כל מה שצריך לדעת</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq reveal"><q>כמה זמן לוקח לקבל את הכרטיס?</q><div class="a"><p>הכרטיס הוירטואלי מונפק תוך דקות ספורות מרגע אישור הטעינה ברשת הבלוקצ'יין. כרטיס פיזי נשלח אליכם תוך 7–14 ימי עסקים, לפי היעד.</p></div></div>
+      <div class="faq reveal"><q>מהן העמלות?</q><div class="a"><p>0 דמי שנתי בכל הכרטיסים, ועמלת עסקה אחידה של 1.3%. עלות ההנפקה: Virtual חינם, BitMart ‏$60, Platinum ‏$110. משיכת מזומן בכספומט: לא זמינה ב-Virtual, 2% ב-BitMart, ומ-1.5% ב-Platinum (העמלה הנמוכה ביותר).</p></div></div>
+      <div class="faq reveal"><q>אילו מטבעות אפשר לטעון?</q><div class="a"><p>אפשר לטעון USDT, ביטקוין, איתריום ועוד מגוון מטבעות, דרך הרשתות TRC20, ERC20, BEP20 ו-Solana. ההמרה למטבע ההוצאה מתבצעת אוטומטית.</p></div></div>
+      <div class="faq reveal"><q>אפשר לחבר ל-Apple Pay או Google Pay?</q><div class="a"><p>בהחלט. גם הכרטיס הוירטואלי וגם הפיזי נתמכים ב-Apple Pay וב-Google Pay, כך שתוכלו לשלם בהקשה אחת מהטלפון או מהשעון.</p></div></div>
+      <div class="faq reveal"><q>עד כמה הכרטיס מאובטח?</q><div class="a"><p>הכרטיס מוגן בהצפנה, אימות דו-שלבי (2FA) ויכולת הקפאה והפשרה מיידית מתוך האפליקציה. אתם בשליטה מלאה על הכרטיס בכל רגע.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- final cta -->
+<section class="cta-final" id="apply">
+  <div class="wrap">
+    <div class="cta-card cta-center">
+      <div class="reveal">
+        <span class="badge"><span class="dot"></span> נרשמים לבורסה ומקבלים את הכרטיס</span>
+        <h2>מוכנים לכרטיס <span class="grad-text">BitMart</span> שלכם?</h2>
+        <p>נרשמים לבורסת BitMart, מאמתים את החשבון ומקבלים את הכרטיס — הכול אונליין, בפחות משתי דקות, בלי ניירת.</p>
+        <div class="cta-flow">
+          <span><b>1</b> נרשמים לבורסה</span>
+          <span class="sep">←</span>
+          <span><b>2</b> מאמתים חשבון</span>
+          <span class="sep">←</span>
+          <span><b>3</b> מקבלים את הכרטיס</span>
+        </div>
+        <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener" class="btn btn-primary btn-lg">נרשמים ומקבלים את הכרטיס →</a>
+        <div class="form-note">🔒 הנפקה מיידית · אפס דמי שנתי · ללא התחייבות</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="bm-mark" viewBox="0 0 66 40" fill="none" aria-label="BitMart">
+            <g>
+              <rect x="2"  y="7"   width="13" height="3.4" rx="1.7" fill="#5fd0c2"/>
+              <rect x="7"  y="13"  width="9"  height="3.4" rx="1.7" fill="#2a9a8d"/>
+              <rect x="0"  y="19"  width="16" height="3.4" rx="1.7" fill="#35b3a4"/>
+              <rect x="6"  y="25"  width="10" height="3.4" rx="1.7" fill="#7fd8cd"/>
+              <rect x="3"  y="31"  width="8"  height="3.4" rx="1.7" fill="#2a9a8d"/>
+            </g>
+            <path d="M26 3.6 H35.5 A8.6 8.6 0 0 1 35.5 20.8 H26 M26 20.8 H37 A8.6 8.6 0 0 1 37 38 H26 M26 3.6 V38"
+                  fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          BitMart <small>Card</small>
+        </div>
+        <p>כרטיס Visa קריפטו שמחבר בין הנכסים הדיגיטליים שלכם לעולם האמיתי. טענו, שלמו, חיו בקריפטו.</p>
+      </div>
+      <div class="foot-col">
+        <h4>המוצר</h4>
+        <a href="#benefits">יתרונות</a>
+        <a href="#how">איך זה עובד</a>
+        <a href="#pricing">תוכניות ומחירים</a>
+        <a href="https://www.bitmart.com/activity/TheGoat" target="_blank" rel="noopener">הפעלת כרטיס</a>
+      </div>
+      <div class="foot-col">
+        <h4>תמיכה</h4>
+        <a href="#faq">שאלות נפוצות</a>
+        <a href="#">מרכז עזרה</a>
+        <a href="#">צרו קשר</a>
+        <a href="#">סטטוס מערכת</a>
+      </div>
+      <div class="foot-col">
+        <h4>משפטי</h4>
+        <a href="#">תקנון שימוש</a>
+        <a href="#">מדיניות פרטיות</a>
+        <a href="#">עמלות ותעריפים</a>
+        <a href="#">גילוי סיכונים</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>מסחר והחזקה במטבעות קריפטו כרוכים בסיכון ועלולים להוביל להפסד כספי. זמינות הכרטיס, ההטבות והעמלות עשויות להשתנות בהתאם לאזור ובכפוף לאישור ולבדיקות רגולטוריות. אין באמור בדף זה משום ייעוץ פיננסי, השקעתי או מס. BitMart היא סימן מסחרי של בעליו. * דף זה הוא דוגמת עיצוב — נתונים, מחירים וביקורות להמחשה בלבד ויש לעדכנם לפני פרסום.</p>
+      <span class="cc">© 2026 BitMart Card</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+
+  document.querySelectorAll('.faq q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const f=q.parentElement, a=f.querySelector('.a'), open=f.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(x=>{x.classList.remove('open');x.querySelector('.a').style.maxHeight=null});
+      if(!open){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+    });
+  });
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';io.observe(el);});
+
+  const CARD_URL='https://www.bitmart.com/activity/TheGoat';
+  const card=document.querySelector('.ccard');
+  if(card) card.addEventListener('click',()=>window.open(CARD_URL,'_blank','noopener'));
+
+  const form=document.getElementById('applyForm');
+  if(form){
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      if(!form.checkValidity()){form.reportValidity();return;}
+      form.style.display='none';
+      document.getElementById('successBox').classList.add('show');
+      window.open(CARD_URL,'_blank','noopener');
+    });
+  }
+</script>
+</body>
+</html>
